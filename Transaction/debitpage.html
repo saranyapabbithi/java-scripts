@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+     body{
+        background:url("image2.jpg") no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .main{
+        background-color: rgb(183, 143, 201);
+        text-align: center;
+        align-items: center;
+        border-radius: 10px;
+        height:300px;
+        width: 500px;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2)
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #fff;
+        border: 1px solid rgb(183, 143, 201);
+        border-radius: 5px;
+        border-color: black;
+    }
+    button:hover {
+        background-color: rgb(183, 143, 201);
+    }
+    .btn{
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+</style>
+
+</style>
+<body>
+    
+    <div class="btn">
+        <a href="dashboard.html"><button>Home</button></a>
+    </div>
+    
+    <div class="main">
+        <br><h2>Debit Your Amount</h2><br>
+        <input type="number" placeholder="Enter Your Amount" id="amount">
+        <button onclick="debit()">submit</button><br><br>
+        <a href="accountpage.html"><button onclick="Check()">Check Balance</button></a>
+        <a href="creditpage.html"> <button onclick="credit()">Debit</button></a>
+        <h2 id="finaldebit"></h2>
+
+    </div>
+
+    <script>
+        const fixamt=20000;
+        function debit(){
+            let deb= document.getElementById('amount').value;
+            let debval= parseInt(deb);
+            let totalbal= fixamt-debval;
+            document.getElementById('finaldebit').innerHTML='Your Total Balance='+totalbal;
+
+        }
+    </script>
+
+</body>
+</html>

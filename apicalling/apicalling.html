@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>   
+<head>
+    <title>Application Programming interface</title>
+  </head>
+  <style>
+
+    body{
+        background-color:plum;
+    }
+    .main{
+        display: flex;
+        flex-wrap:wrap;
+        text-align:center;
+        background-color: lavender;
+        
+
+    }
+    .card{
+        border: 2px solid rgb(183, 143, 201);
+        padding: 5px;
+        margin : 5px;
+        
+    }
+     img{
+        height: 300px;
+     }
+
+     img:hover{
+        transform: scale(0.9);
+        transition: 2s;
+      }
+     
+  </style>
+<body>
+    
+    <a href="../index.html" ><button style="background-color:plum;">Back</button> </a> 
+
+    <div class="main">
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+        <div class="card">
+            <img src="" alt="">
+            <p></p>
+            <span></span>
+        </div>
+
+    </div>
+
+
+
+
+<script>
+    let cards = document.querySelectorAll(".card");
+    async function getdata(){
+        let responce = await fetch("https://dummyjson.com/products")
+        let data =await responce.json();
+        console.log(data.products );
+
+       
+        cards.forEach((element,i)=>{
+            element.getElementsByTagName("img")[0].src=data.products[i].images[0];
+            element.getElementsByTagName("p")[0].innerHTML=data.products[i].price;
+            element.getElementsByTagName("span")[0].innerHTML=data.products[i].brand;
+            
+        })
+    }
+      getdata();
+      
+</script>
+</body>    
+</html>    
